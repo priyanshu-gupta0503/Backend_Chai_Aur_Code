@@ -1,0 +1,65 @@
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+app.get('/my',(req,res)=>
+{
+    res.send("My life is good")
+})
+app.get('/hello',(req,res)=>
+{
+    res.send(
+        "<h1>Hello World</h1>"
+    )
+})
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+//Without rerunning the server we do not see anythingbecause if we ever learn from something called react there is a concept called hot reload in that the server gets reloaded of its own because of its hot reloading feature but here also here are also there are some packages which we can use but initially we will not use it and we will just be reload the server manually
+
+/*I'll explain the key differences between CommonJS (require) and ES Modules (import/export):
+
+1. **Syntax**:
+   - CommonJS uses `require()` and `module.exports`:
+   ```javascript
+   const express = require('express');
+   module.exports = someFunction;
+   ```
+   - ES Modules uses `import` and `export`:
+   ```javascript
+   import express from 'express';
+   export default someFunction;
+   ```
+
+2. **Loading**:
+   - CommonJS loads modules synchronously (at runtime)
+   - ES Modules loads modules asynchronously (at parse time)
+
+3. **File Extensions**:
+   - CommonJS: `.js` files are treated as CommonJS by default
+   - ES Modules: Need either `.mjs` extension or `"type": "module"` in package.json
+
+4. **Top-level await**:
+   - CommonJS: Doesn't support top-level await
+   - ES Modules: Supports top-level await
+
+5. **Browser Support**:
+   - CommonJS: Not natively supported in browsers
+   - ES Modules: Natively supported in modern browsers
+
+6. **Static Analysis**:
+   - CommonJS: Dynamic imports (can use variables in require)
+   - ES Modules: Static imports (imports must be at top level, can't use variables)
+
+In your case, since you're using Node.js, both approaches work fine. CommonJS is the traditional Node.js way, while ES Modules is the more modern approach that aligns with browser JavaScript. The choice often depends on your project's needs and team preferences.
+
+Would you like me to show you how to use either approach in your code?
+
+Env file is used to store the environment variables
+it contains the port number and the database connection string
+some things are not needed to be shown in the code so we use env file to store them
+*/

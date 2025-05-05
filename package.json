@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "\"A basic app to deploy\"",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyanshu-gupta0503/Backend_Chai_Aur_Code.git"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "express"
+  ],
+  "author": "\"Priyanshu Gupta\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyanshu-gupta0503/Backend_Chai_Aur_Code/issues"
+  },
+  "homepage": "https://github.com/priyanshu-gupta0503/Backend_Chai_Aur_Code#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}

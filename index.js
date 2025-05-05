@@ -62,4 +62,114 @@ Would you like me to show you how to use either approach in your code?
 Env file is used to store the environment variables
 it contains the port number and the database connection string
 some things are not needed to be shown in the code so we use env file to store them
+
+ What type of database you are going to use likepostpress or my sequel first every company goes for data on like what will be the structure of data so data modeling is very important at the speech experience experts useit or it is a dot file so first we have to structure the data and then we have to go for the database
+
+ https://app.eraser.io/workspace/tZVJvbdigc2aY1B5LCHi
+ https://www.datensen.com/moon-modeler-for-databases.html
+
+
+ Mongoose help  u in data modeling and data validation
+
+ first we make a models folder and then we can name it as  user.js
+
+ but we the better practice is to use the  name user,models.js
+ this denotes a standard practice
+
+ this is the vasic command to make a schemma 
+ import mongoose from 'mongoose';
+const userSchema = new mongoose.Schema({});
+
+export const User = mongoose.model('User', userSchema);
+
+The schema name we have given here is User but when it goes in momgodb it converts it into loewer case and plural users
+ 
+
+import mongoose from 'mongoose';
+const userSchema = new mongoose.Schema({
+  username:String
+});
+
+export const User = mongoose.model('User', userSchema);
+
+we can write the code this way but what would be better
+
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+
+    now this is a better way to do this 
+    required true as u have done here so now u dont have to mange that thing in the controllers
+
+    import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      require: true,
+      unique: true,
+      lowercase: true,
+    },
+    email: {
+      type: String,
+      require: true,
+      unique: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      require: true,
+    },
+  },
+  { timestamps: true }
+);
+
+export const User = mongoose.model('User', userSchema);
+
+{ timestamps: true } this is a very common type of field that mongoose provide it of its own and it has two uses createdAt() and updatedAt()
+ https://mongoosejs.com/docs/timestamps.html
+
+
+ import mongoose from 'mongoose';
+
+const todoSchema = new mongoose(
+  {
+    content: {
+      type: String,
+      required: true,
+    },
+    complete: {
+      type: Boolean,
+      default: false,
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+    subTodos: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'subTodo',
+      },
+    ],
+  }, //Array of Dub ToDos
+  { timestamps: true }
+);
+export const Todo = mongoose.model('Todo', todoSchema);
+
+
+type: mongoose.Schema.Types.ObjectId,
+
+this is use to give the refrence to other model 
+after this we write 
+ref:User
+
+type:moongoose.Schema.Types.ObjectId
+  },
+
 */
+
+

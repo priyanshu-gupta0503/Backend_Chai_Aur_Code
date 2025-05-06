@@ -7,7 +7,7 @@ Now we have setup the file structure for a proffesional grade project
 Database Connection
 
 whenever u put this in .env 
-MongoDB_URL=mongodb+srv://priyanshu153:priyanshu123@cluster0.94y0f.mongodb.net
+MongoDB_URL=anything here 
 remove the last bracket
 
 

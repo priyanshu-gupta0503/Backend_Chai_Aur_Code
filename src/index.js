@@ -1,24 +1,44 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const port = 3000
+//require('dotenv').config({path:'./env'})   this is correct  but it reduces out code consistency
+import dotenv from "dotenv"
+import connectDB from "../db/index.js";
+dotenv.config({path:'./env'})
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-app.get('/my',(req,res)=>
-{
-    res.send("My life is good")
-})
-app.get('/hello',(req,res)=>
-{
-    res.send(
-        "<h1>Hello World</h1>"
-    )
-})
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+
+
+
+connectDB()
+
+//Database coonection should always be the first thing in our project so we use IIfe
+//An Immediately Invoked Function Expression (IIFE) is a JavaScript function that is defined and executed immediately after it's defined. This allows for creating private scopes, preventing variable pollution of the global scope, and encapsulating code for better organization
+//we use semicolon before iife because it may happen that sometimes u forgot to add semicolon in the previous lime of code so make it a practice 
+//as this is a database connection so async await and try catch are necessary
+
+//This was the first approach
+// import express from "express";
+// const app=express()
+// ;(async()=>
+// {
+// try {
+//   await mongoose.connect(`${process.env.MongoDB_URL}/${DB_Name}`)
+//   app.on("error",(error)=>
+//   {
+//     console.log("Error",error);
+//     throw error
+    
+//   })
+
+//   app.listen(process.env.PORT,()=>
+//   {
+//     console.log(`App is listenig on ${process.env.PORT}`);
+    
+//   })
+  
+// } catch (error) {
+//   console.error("Error",error)
+//   throw error
+// }
+// })()
 
 
 

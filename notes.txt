@@ -1,3 +1,18 @@
 Sometimes we have to store images in our project so for that we have to setup some third Parrty services like cloiudimary or AWS
 but befoore uploading images on that we have to keep then in a public folder do that even if ther is a problem they will be there on our server
-we make a temp folder in public but git doesnt recognize it so to make it recognize we have to add a file named gitkeep
+we make a temp folder in public but git doesnt recognize it so to make it recognize we have to add a file named .gitkeep
+
+Now we have setup the file structure for a proffesional grade project
+
+Database Connection
+
+whenever u put this in .env 
+MongoDB_URL=mongodb+srv://priyanshu153:priyanshu123@cluster0.94y0f.mongodb.net
+remove the last bracket
+
+
+
+Pro tip :
+Whenever u are usinf a database there are many errors so u always wrap things in a try catch block 
+Database is always in another continent so it takes time so better u use always async await
+

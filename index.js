@@ -19,6 +19,25 @@ app.get('/hello',(req,res)=>
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Without rerunning the server we do not see anythingbecause if we ever learn from something called react there is a concept called hot reload in that the server gets reloaded of its own because of its hot reloading feature but here also here are also there are some packages which we can use but initially we will not use it and we will just be reload the server manually
 
 /*I'll explain the key differences between CommonJS (require) and ES Modules (import/export):
@@ -169,7 +188,10 @@ ref:User
 
 type:moongoose.Schema.Types.ObjectId
   },
-
 */
 
 
+/*
+From this part we will start we will start making Project from the scratch so first we have to make a basic model 
+this is the limk of it https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj
+*/ 

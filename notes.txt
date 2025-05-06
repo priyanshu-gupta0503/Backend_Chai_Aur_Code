@@ -1,0 +1,3 @@
+Sometimes we have to store images in our project so for that we have to setup some third Parrty services like cloiudimary or AWS
+but befoore uploading images on that we have to keep then in a public folder do that even if ther is a problem they will be there on our server
+we make a temp folder in public but git doesnt recognize it so to make it recognize we have to add a file named gitkeep

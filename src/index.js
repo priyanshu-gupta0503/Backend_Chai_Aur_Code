@@ -2,12 +2,27 @@
 import dotenv from "dotenv"
 import connectDB from "../db/index.js";
 dotenv.config({path:'./env'})
+import {app} from "app.js"
+//connectDB returns a promise so we have to handle that with then and catch
+connectDB().then(()=>
+{
+  app.on("error",(error)=>
+    {
+      console.log("Error",error);
+      throw error
+      
+    })
+app.listen(process.env.PORT||8000,()=>
+{
+  console.log(`Server is running at port ${process.env.PORT}`)
+})
 
 
-
-
-
-connectDB()
+}).catch((error)=>
+{
+  console.log("MongoDB connection error!!",error);
+  
+})
 
 //Database coonection should always be the first thing in our project so we use IIfe
 //An Immediately Invoked Function Expression (IIFE) is a JavaScript function that is defined and executed immediately after it's defined. This allows for creating private scopes, preventing variable pollution of the global scope, and encapsulating code for better organization
@@ -21,12 +36,12 @@ connectDB()
 // {
 // try {
 //   await mongoose.connect(`${process.env.MongoDB_URL}/${DB_Name}`)
-//   app.on("error",(error)=>
-//   {
-//     console.log("Error",error);
-//     throw error
+  // app.on("error",(error)=>
+  // {
+  //   console.log("Error",error);
+  //   throw error
     
-//   })
+  // })
 
 //   app.listen(process.env.PORT,()=>
 //   {

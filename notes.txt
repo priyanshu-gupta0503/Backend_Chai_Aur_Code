@@ -16,3 +16,22 @@ Pro tip :
 Whenever u are usinf a database there are many errors so u always wrap things in a try catch block 
 Database is always in another continent so it takes time so better u use always async await
 
+
+
+u need some more packages like cookie parser and cors 
+because in express we have some function req.cookies
+
+
+app.use   we generally use when we have some middlewares and parsers
+
+
+
+Why we use cors package 
+
+The cors package in Node.js is used to enable Cross-Origin Resource Sharing (CORS). CORS is a security feature implemented by browsers that restricts web pages from making requests to a different domain than the one that served the web page.
+
+Why it's needed:
+By default, browsers block cross-origin requests for security. If your frontend (e.g., running on localhost:3000) tries to access a backend API on localhost:5000, the browser will block the request unless CORS is enabled on the backend.
+
+What the cors package does:
+It allows you to specify which origins (domains) are allowed to access your server's resources, and under what conditions.

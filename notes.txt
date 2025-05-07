@@ -35,3 +35,5 @@ By default, browsers block cross-origin requests for security. If your frontend 
 
 What the cors package does:
 It allows you to specify which origins (domains) are allowed to access your server's resources, and under what conditions.
+
+And we haeve one more package called cookie parser
